@@ -22,7 +22,8 @@ public class Main implements SparkApplication {
         
         get("/", (Request request, Response response) -> {
             int port = request.port();
-            return "The port this site is running on Port: "+Integer.toString(port);
+            String proto = request.protocol();
+            return "This site is running on Port: "+Integer.toString(port)+"<br/>Your connected over: "+proto;
         });
     }
 }
